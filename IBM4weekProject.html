@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LearnMate WO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    color:white;
+    overflow-x:hidden;
+    min-height:100vh;
+}
+
+/* BACKGROUND */
+.bg-image{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.20);
+    z-index:-1;
+}
+
+/* MAKE PAGE SCROLLABLE */
+.page{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+/* HEADER FIX */
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    padding:20px 60px;
+
+    backdrop-filter:blur(10px);
+    background:rgba(0,0,0,0.25);
+}
+
+.logo{
+    font-family:'Great Vibes',cursive;
+    font-size:46px;
+}
+
+.powered{
+    font-size:12px;
+    opacity:0.9;
+}
+
+/* CONTENT */
+.container{
+    padding:30px 60px;
+    display:flex;
+    flex-direction:column;
+}
+
+/* HERO */
+.hero{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+    align-items:flex-start;
+}
+
+/* LEFT */
+.left{
+    max-width:55%;
+}
+
+h1{
+    font-size:52px;
+    line-height:1.1;
+    margin-bottom:15px;
+    text-shadow:0 4px 15px rgba(0,0,0,0.7);
+}
+
+.description{
+    font-size:15px;
+    line-height:1.7;
+    max-width:560px;
+}
+
+.helper{
+    margin-top:18px;
+    padding:14px;
+    background:rgba(0,0,0,0.35);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:8px;
+    font-size:13px;
+}
+
+/* RIGHT CARDS */
+.cards{
+    width:420px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.card{
+    padding:14px;
+    background:rgba(0,0,0,0.45);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:8px;
+    backdrop-filter:blur(8px);
+}
+
+.card h3{
+    font-size:13px;
+}
+
+.card p{
+    font-size:11.5px;
+    opacity:0.9;
+}
+
+/* CHAT HINT */
+.chat-hint{
+    position:fixed;
+    bottom:90px;
+    right:20px;
+    padding:10px 14px;
+    background:rgba(0,0,0,0.65);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:8px;
+    font-size:12px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    header{
+        padding:15px 20px;
+    }
+
+    .hero{
+        flex-direction:column;
+    }
+
+    .left{
+        max-width:100%;
+    }
+
+    .cards{
+        width:100%;
+    }
+
+    h1{
+        font-size:36px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+<img src="ibm_background_minecraft.png" class="bg-image">
+<div class="overlay"></div>
+
+<div class="page">
+
+<!-- HEADER -->
+<header>
+    <div>
+        <div class="logo">LearnMate WO</div>
+        <div class="powered">Powered by IBM Watson Orchestrate & IBM Granite</div>
+    </div>
+</header>
+
+<!-- MAIN -->
+<div class="container">
+
+<div class="hero">
+
+    <!-- LEFT -->
+    <div class="left">
+
+        <h1>Discover Your Path.<br>Build Your Future.</h1>
+
+        <div class="description">
+            LearnMate WO is an AI-powered learning companion helping students explore careers, build skills, and generate personalized learning paths.
+        </div>
+
+        <div class="helper">
+            💡 Use the AI chat at bottom-right. Ask: "I want to become a Data Scientist"
+        </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="cards">
+
+        <div class="card">
+            <h3>🎯 Career</h3>
+            <p>Explore paths</p>
+        </div>
+
+        <div class="card">
+            <h3>📚 Learning</h3>
+            <p>Roadmaps</p>
+        </div>
+
+        <div class="card">
+            <h3>💾 Save</h3>
+            <p>Screenshot progress</p>
+        </div>
+
+        <div class="card">
+            <h3>🧠 AI</h3>
+            <p>Guidance only</p>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CHAT -->
+<div class="chat-hint">
+👉 Start learning here
+</div>
+
+
+<!-- IBM SCRIPT -->
+
+<script>
+  window.wxOConfiguration = {
+    orchestrationID: "4bd84c55c15a49db86468e9c4e7a2159_00c76695-20a5-4415-a33a-6275bf9ccd21",
+    hostURL: "https://au-syd.watson-orchestrate.cloud.ibm.com",
+    rootElementID: "root",
+    deploymentPlatform: "ibmcloud",
+    crn: "crn:v1:bluemix:public:watsonx-orchestrate:au-syd:a/4bd84c55c15a49db86468e9c4e7a2159:00c76695-20a5-4415-a33a-6275bf9ccd21::",
+    chatOptions: {
+        agentId: "a0842503-f45d-447e-ac96-6f64172be99b", 
+        agentEnvironmentId: "3ca7c8aa-8a4d-4a2f-a671-d77a6cf457de",
+    }
+  };
+  setTimeout(function () {
+    const script = document.createElement('script');
+    script.src = `${window.wxOConfiguration.hostURL}/wxochat/wxoLoader.js?embed=true`;
+    script.addEventListener('load', function () {
+        wxoLoader.init();
+    });
+    document.head.appendChild(script);
+  }, 0);                     
+</script>
+
+</body>
+</html>
