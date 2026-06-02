@@ -272,5 +272,58 @@ h1{
   }, 0);                     
 </script>
 
+<script>
+
+const API_URL = "https://api-inference.huggingface.co/models/ibm-granite/granite-3.3-2b-instruct";
+
+const HEADERS = {
+    "Authorization": "Bearer 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",
+    "Content-Type": "application/json"
+};
+
+// 🔹 CALL GRANITE MODEL
+async function callAI(userInput) {
+
+    const response = await fetch(API_URL, {
+        method: "POST",
+        headers: HEADERS,
+        body: JSON.stringify({
+            inputs: userInput
+        })
+    });
+
+    const data = await response.json();
+    return data;
+}
+
+// 🔹 MAIN FUNCTION (connects to your existing UI button)
+async function generateRoadmap() {
+
+    const input = document.getElementById("userInput").value;
+    const output = document.getElementById("output");
+
+    if (!input) {
+        output.innerText = "Please enter something...";
+        return;
+    }
+
+    output.innerText = "Thinking... 🤖";
+
+    try {
+        const result = await callAI(input);
+
+        // clean output
+        output.innerText =
+            result?.[0]?.generated_text ||
+            JSON.stringify(result, null, 2);
+
+    } catch (error) {
+        console.error(error);
+        output.innerText = "Error connecting to AI 😓";
+    }
+}
+
+</script>
+
 </body>
 </html>
