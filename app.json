@@ -1,0 +1,13 @@
+{
+  "name": "LearnMate WO",
+  "description": "AI-powered learning companion using IBM Granite and IBM Watson Orchestrate",
+  "version": "1.0",
+  "technology": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "IBM Granite",
+    "IBM Watson Orchestrate",
+    "Hugging Face API"
+  ]
+}
